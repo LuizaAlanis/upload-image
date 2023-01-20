@@ -11,11 +11,11 @@ def get_config(product_code):
     return result_df
 
 
-def upload_file(file):
+def upload_file(file, folder):
     file_name = "/ic_logo.png"
-    directory = "/home/luiza/Pictures"
+    directory = "/home/luiza/Pictures/"
 
-    wget.download(file, directory + file_name)
+    wget.download(file, directory + folder + file_name)
 
 
 def upload_logos():
@@ -24,7 +24,7 @@ def upload_logos():
     # sizes: 108x108, 162x162, 216x216, 324x324 e 432x432
     for logo in app_logos:
         print(app_logos[logo])
-        upload_file(app_logos[logo])
+        upload_file(app_logos[logo], logo)
 
 
 if __name__ == '__main__':
