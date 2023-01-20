@@ -19,7 +19,7 @@ def upload_file(file):
 
 
 def upload_logos():
-    product_config = get_config('B')
+    product_config = get_config('A')
     app_logos = product_config['custom_interface'].values[0]['app_icon']
     # sizes: 108x108, 162x162, 216x216, 324x324 e 432x432
     for logo in app_logos:
