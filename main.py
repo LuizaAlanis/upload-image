@@ -1,16 +1,31 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+import os
+from pathlib import Path
+import pandas as pd
+import wget
 
 
-# Press the green button in the gutter to run the script.
+def get_config(product_code):
+    df = pd.read_json('config.json')
+    result_df = df.loc[df['product_code'] == product_code]
+
+    return result_df
+
+
+def upload_file(file):
+    file_name = "/ic_logo.png"
+    directory = "/home/luiza/Pictures"
+
+    wget.download(file, directory + file_name)
+
+
+def upload_logos():
+    product_config = get_config('B')
+    app_logos = product_config['custom_interface'].values[0]['app_icon']
+    # sizes: 108x108, 162x162, 216x216, 324x324 e 432x432
+    for logo in app_logos:
+        print(app_logos[logo])
+        upload_file(app_logos[logo])
+
+
 if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    upload_logos()
