@@ -37,3 +37,8 @@ def upload_logos():
         print(app_logos[logo])
         upload_file(app_logos[logo], logo)
 ```
+
+## :rocket: Contributing
+
+Pull requests are welcome. For major changes, please open an issue first
+to discuss what you would like to change.
