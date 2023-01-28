@@ -12,7 +12,7 @@ git@github.com:LuizaAlanis/upload-image.git
 
 ```
 
-## Usage
+## :snake: Usage
 
 The idea is simple. We have a kind of mockup: config.json that contains all image url. And we will make a filter to upload each information:
 
