@@ -2,7 +2,7 @@
 
 upload image using Python and local mockup
 
-## :octocat: Installation
+## :octocat: Clone the project
 
 Clone the repository
 
